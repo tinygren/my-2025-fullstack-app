@@ -96,17 +96,6 @@ const App = () => {
 }
 
 export default App 
-/*
-Esim
-const notes = [
-  { id: 1, text: "Hello" },
-  { id: 2, text: "React" }
-]
 
-const id = 1;
-
-const result = notes.filter(n => n.id !== id);
-// result = [{ id: 2, text: "React" }]
-*/
 
 
