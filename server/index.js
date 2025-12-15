@@ -1,8 +1,13 @@
 const express = require('express')
+const path = require('path')
 const app = express()
 
 
 app.use(express.json())
+
+// Serve static files from the built client (Vite output)
+const clientDistPath = path.join(__dirname, '..', 'client', 'dist')
+app.use(express.static(clientDistPath))
 
 
 let notes = [
@@ -83,4 +88,13 @@ app.post('/api/notes', (request, response) => {
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
+})
+
+// Fallback to index.html for client-side routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(clientDistPath, 'index.html'), err => {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
 })
