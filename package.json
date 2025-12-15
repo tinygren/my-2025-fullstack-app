@@ -1,0 +1,9 @@
+{
+  "name": "my-2025-fullstack-app",
+  "private": true,
+  "scripts": {
+    "install": "npm install --prefix server && npm install --prefix client",
+    "build": "npm run build --prefix client",
+    "start": "npm start --prefix server"
+  }
+}
