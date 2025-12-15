@@ -85,16 +85,16 @@ app.post('/api/notes', (request, response) => {
   response.json(notes)
 })
 
-const PORT = process.env.PORT || 3001
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
-
 // Fallback to index.html for client-side routing
-app.get('*', (req, res) => {
+app.get(/.*/, (req, res) => {
   res.sendFile(path.join(clientDistPath, 'index.html'), err => {
     if (err) {
       res.status(500).send(err)
     }
   })
+})
+
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
 })
