@@ -1,0 +1,41 @@
+# UPDATE (PUT) a note by id - REST Client examples
+@baseUrl = http://localhost:3001
+
+### Update note with id - example 1
+@id = 69500d7ef71f7a542288ee14
+PUT {{baseUrl}}/api/notes/{{id}}
+Content-Type: application/json
+
+{
+  "content": "Updated note content",
+  "important": true
+}
+
+### Update another id - example 2
+PUT {{baseUrl}}/api/notes/69500d7ef71f7a542288ee15
+Content-Type: application/json
+
+{
+  "content": "This note is now very important!",
+  "important": true
+}
+
+### Update only content, keep important as is
+PUT {{baseUrl}}/api/notes/69500d7ef71f7a542288ee14
+Content-Type: application/json
+
+{
+  "content": "Changed content only",
+  "important": false
+}
+
+# cURL equivalent (run in terminal):
+# curl -i -X PUT http://localhost:3001/api/notes/69500d7ef71f7a542288ee14 \
+#   -H "Content-Type: application/json" \
+#   -d '{"content":"Updated content","important":true}'
+
+# How it works:
+# 1. The route is /api/notes/{id} with PUT method
+# 2. Send JSON body with fields to update: content, important
+# 3. Server returns updated note object with new data
+# 4. Use { new: true } to return the updated document (not the old one)

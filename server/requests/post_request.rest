@@ -2,6 +2,6 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-  "content": "This is a newly created note yes it is",
-  "important": true
+  "content": "Laitetaan lisää kamaa tietokantaan",
+  "important": false
 }

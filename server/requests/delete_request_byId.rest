@@ -1,0 +1,32 @@
+
+# DELETE a resource by id (REST Client examples)
+@baseUrl = http://localhost:3001
+
+### Quick example — delete id 1
+DELETE {{baseUrl}}/api/notes/1
+Accept: application/json
+
+### Variable id example
+@id = 69526647c27d0a8e0691bc16
+DELETE {{baseUrl}}/api/notes/{{id}}
+Accept: application/json
+
+# cURL equivalent (run in a terminal):
+# curl -i -X DELETE http://localhost:3001/api/notes/1
+
+# Notes:
+# - Replace the port or path if your server listens elsewhere.
+# - In VS Code, use the REST Client extension to run these requests directly from this file.
+
+# HTTP/1.1 204 No Content — what it means
+
+# 204 No Content means:
+
+# ➡️ The DELETE request succeeded
+# ➡️ The resource was deleted successfully
+# ➡️ There is nothing to return in the response body
+
+# In other words:
+# 🗑️ The note with ID 69500d7ef71f7a542288ee14 is now deleted
+
+# This is exactly the correct status code for a successful DELETE in REST APIs.
