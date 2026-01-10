@@ -7,7 +7,7 @@ DELETE {{baseUrl}}/api/notes/1
 Accept: application/json
 
 ### Variable id example
-@id = 69526647c27d0a8e0691bc16
+@id = 695b97e37243a62352556a61
 DELETE {{baseUrl}}/api/notes/{{id}}
 Accept: application/json
 

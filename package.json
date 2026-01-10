@@ -6,5 +6,8 @@
     "build": "npm --prefix client run build",
     "postinstall": "npm --prefix client install && npm --prefix client run build",
     "start": "npm start --prefix server"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.7.0"
   }
 }
